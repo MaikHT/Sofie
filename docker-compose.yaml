@@ -48,23 +48,23 @@ services:
     depends_on:
       - core
   
-  supertimeline:
-    image: ./supertimeline
-    restart: always
-     command: yarn start -host core -port 3000
-    networks:
-      - sofie
-    depends_on:
-      - core
+# supertimeline:
+#   image: ./supertimeline
+#   restart: always
+#  command: yarn start -host core -port 3000
+#   networks:
+#     - sofie
+#  depends_on:
+#     - core
       
   portainer:
-    image: portainer/portainer
-    restart: always
-    ports:
-      - "9000:9000"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./data/portainer:/data
+   image: portainer/portainer
+   restart: always
+   ports:
+     - "9000:9000"
+   volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - ./data/portainer:/data
 
 networks:
   sofie:
