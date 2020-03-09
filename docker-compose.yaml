@@ -47,7 +47,16 @@ services:
       - sofie
     depends_on:
       - core
-
+  
+  supertimeline:
+    image: supertimeline
+    restart: always
+     command: yarn start -host core -port 3000
+    networks:
+      - sofie
+    depends_on:
+      - core
+      
   portainer:
     image: portainer/portainer
     restart: always
