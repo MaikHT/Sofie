@@ -49,7 +49,7 @@ services:
       - core
   
   supertimeline:
-    image: supertimeline
+    image: ./supertimeline
     restart: always
      command: yarn start -host core -port 3000
     networks:
